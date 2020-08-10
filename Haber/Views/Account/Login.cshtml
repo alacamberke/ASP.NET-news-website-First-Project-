@@ -1,0 +1,25 @@
+﻿@model Haber.Models.Login
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Giriş Yap</h2>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+<div class="form">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(i => i.Username, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Şifre</label>
+        @Html.TextBoxFor(i => i.Password, new { @class = "form-control", @type="password" })
+    </div>
+    <button type="submit" class="btn btn-success">Giriş Yap</button>
+</div>
+}
+

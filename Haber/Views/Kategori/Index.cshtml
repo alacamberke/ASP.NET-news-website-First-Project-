@@ -1,0 +1,28 @@
+﻿@using Haber.Models
+@model List<KategoriModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Kategoriler</h2>
+<a href="/Kategori/Create" class="btn btn-primary">Kategori Oluştur</a>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Kategori İsmi</th>
+            <th>Ayarlar</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.KategoriName</td>
+                <td>
+                    @Html.ActionLink("Sil", "Delete", new { id=item.KategoriId}, new { @class="btn btn-danger"})
+                    @Html.ActionLink("Düzenle", "Details", new { id=item.KategoriId}, new { @class="btn btn-warning"})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

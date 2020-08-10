@@ -1,0 +1,14 @@
+﻿@model Haber.Models.KategoriModel
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>
+    @Model.KategoriName isimli kategoriyi silmek istediğinize emin misiniz?
+    Eğer silerseniz kategorisi @Model.KategoriName adlı olan haberleri de silersiniz.
+</h2>
+
+
+@Html.ActionLink("Evet", "DeleteConfirmed", "Kategori", new { id = Model.KategoriId }, new { @class = "btn btn-success" })
+<a href="/Kategori/Index" class="btn btn-danger">Hayır</a>
+

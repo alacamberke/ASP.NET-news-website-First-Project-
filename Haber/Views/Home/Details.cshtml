@@ -1,0 +1,46 @@
+﻿@model Haber.Models.HaberModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Haber Detayı</h2>
+
+<div class="card bg-transparent">
+    <div class="card-body">
+        <div class="card-title">
+            <h4>@Model.HaberTitle</h4>
+        </div>
+        <div class="card-body">
+            <p>@Model.HaberContent</p>
+        </div>
+        <div class="card-footer">
+            <strong>Kategorisi:</strong>@ViewBag.kategori.KategoriName<br />
+            <strong>Görüntülenme Sayısı: @Model.View</strong><br />
+            <strong>Sahibi: </strong>@Model.HaberOwnerName
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="form">
+        <div class="card bg-light">
+            <div class="container">
+                <div class="form-group">
+                    <label>Yorum Yaz: </label>
+                    @Html.TextArea("CommentContent", new { @class = "form-control" })
+                </div>
+                @Html.Hidden("haberid", Model.HaberID)
+                <button type="submit" class="btn btn-success">Gönder</button>
+            </div>
+        </div>
+    </div>
+}
+
+
+@{ Html.RenderAction("Comments", new { haberid = Model.HaberID });}
+
+
+
+
+

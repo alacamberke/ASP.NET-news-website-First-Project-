@@ -1,0 +1,9 @@
+﻿@using Haber.Models
+@model List<CommentModel>
+
+@foreach (var comment in Model)
+{
+    <p><strong>Yorum Sahibi:</strong> @comment.CommentOwner</p>
+    <p><strong>Yorumu:</strong> @comment.CommentContent</p>
+}
+

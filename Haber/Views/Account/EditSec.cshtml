@@ -1,0 +1,18 @@
+﻿@model Haber.Models.Register
+@{
+    ViewBag.Title = "EditSec";
+}
+
+<h2>Lütfen Mevcut hesabın şifresini giriniz.</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Hidden("userid",Model.UserID)
+    <div class="form-group">
+        <label>Yeni kullanıcı adınız: </label>
+        @Html.EditorFor(i => i.Username, null, new { @class = "form-control", @type = "text" })
+    </div>
+
+    <button type="submit" class="btn btn-success">Tamam</button>
+}
+

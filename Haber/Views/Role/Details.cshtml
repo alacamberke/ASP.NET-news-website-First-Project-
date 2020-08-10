@@ -1,0 +1,20 @@
+﻿@model Haber.Models.Roles
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.RoleName Adlı Role Sahip Kullanıcılar</h2>
+
+<table class="table">
+    <tr>
+        <th>Kullanıcı Adı</th>
+        <th>Emaili</th>
+    </tr>
+    @foreach (var user in ViewBag.users)
+    {
+        <tr>
+            <td>@user.Username</td>
+            <td>@user.Email</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,22 @@
+﻿@model Haber.Models.KategoriModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Kategori Oluştur</h2>
+
+@Html.ValidationSummary()
+
+<div class="row">
+    @using (Html.BeginForm())
+    {
+        <div class="form">
+            <div class="form-group">
+                <label>Kategori Adı</label>
+                @Html.TextBoxFor(i=>i.KategoriName, new { @class="form-control"})
+            </div>
+            <button class="btn btn-success" type="submit">Kaydet</button>
+        </div>
+    }
+</div>
+

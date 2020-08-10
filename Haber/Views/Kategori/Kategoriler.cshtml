@@ -1,0 +1,27 @@
+﻿@using Haber.Models
+@model List<KategoriModel>
+
+<div class="card bg-light">
+    <div class="m-3">
+        <ul style="list-style-type: none">
+            @foreach (var item in Model)
+            {
+                <li>
+                    @Html.ActionLink(item.KategoriName, "Index", "Home", new { kategoriid = item.KategoriId },
+                   new { @class = "text-dark", @style = "margin-right: 0px" })
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<br />
+
+<div class="card bg-light">
+    @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+    {
+        @Html.TextBox("search",null,new { @class="form-control"})
+        <button type="submit" class="btn btn-success">Ara</button>
+    }
+</div>
+

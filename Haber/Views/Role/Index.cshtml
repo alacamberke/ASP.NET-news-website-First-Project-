@@ -1,0 +1,29 @@
+﻿@using Haber.Models
+@model List<Haber.Models.Roles>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Roller</h2>
+<a href="/Role/RoleAdd" class="btn btn-success">Yeni Rol Oluştur</a>
+<a href="/Role/AddToRole" class="btn btn-primary">Rol Atama İşlemi</a>
+
+<table class="table">
+    <tr>
+        <th>Rol Id</th>
+        <th>Rol İsmi</th>
+        <th>Ayarlar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.RoleID</td>
+            <td>@item.RoleName</td>
+            <td>
+                @Html.ActionLink("Sil", "Delete", "Role", new { roleid=item.RoleID}, new { @class="btn btn-danger"})
+                @Html.ActionLink("Detaya Git","Details","Role", new { roleid = item.RoleID}, new { @class="btn btn-warning"})
+            </td>
+        </tr>
+    }
+</table>
+

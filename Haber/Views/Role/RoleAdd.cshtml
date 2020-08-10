@@ -1,0 +1,18 @@
+﻿@model Haber.Models.Roles
+@{
+    ViewBag.Title = "RoleAdd";
+}
+
+<h2>Role Ekle</h2>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label>Rol İsmi</label>
+        @Html.TextBoxFor(i=>i.RoleName, new { @class="form-control"})
+    </div>
+    <button type="submit" class="btn btn-success">Oluştur</button>
+}
+

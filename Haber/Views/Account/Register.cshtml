@@ -1,0 +1,36 @@
+﻿@model Haber.Models.Register
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Üye ol</h2>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card">
+        <div class="m-3">
+            <div class="form-group">
+                <label>Kullanıcı Adı</label>
+                @Html.TextBoxFor(i => i.Username, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Şifre</label>
+                @Html.TextBoxFor(i => i.Password, new { @class = "form-control", @type = "password" })
+            </div>
+            <div class="form-group">
+                <label>Yeniden Şifre</label>
+                @Html.TextBoxFor(i => i.RePassword, new { @class = "form-control", @type = "password" })
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                @Html.TextBoxFor(i => i.Email, new { @class = "form-control" })
+            </div>
+            <button type="submit" class="btn btn-success">Kayıt Ol</button>
+        </div>
+    </div>
+}
+
+

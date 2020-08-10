@@ -1,0 +1,17 @@
+﻿@model Haber.Models.KategoriModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Düzenle</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label>@Model.KategoriName</label>
+        @Html.EditorFor(i=>i.KategoriName)
+    </div>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}
+

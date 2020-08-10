@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "AddToRole";
+    var roles = ViewBag.roles;
+    var users = ViewBag.users;
+}
+
+<h2>Rol Atama</h2>
+
+@using (Html.BeginForm("AddToRole", "Role"))
+{
+    <div class="form-group">
+        @Html.DropDownList("userid", (IEnumerable<SelectListItem>)users,
+       "Lütfen Kullanıcı Seçiniz", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.DropDownList("role", (IEnumerable<SelectListItem>)roles,
+       "Lütfen Rol Seçiniz", new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Tamam</button>
+}
+
